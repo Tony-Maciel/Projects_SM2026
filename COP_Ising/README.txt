@@ -32,12 +32,11 @@ the system at that instant (this is done in logarithmic spacing to avoid huge ou
 later). After this program finishes running, the desired python file should have its parameters modified to read the desired 
 output file(s) and generate the correct results (inside the respective directory).
 
-Inside the directory gifs/ , there are some gifs showing snapshots of this model for a couple system sizes as well as the 
-python file and output files that were used to generate these gifs, which are inside a .zip file.
-
-All the data in the directories here are in .zip files because they are pretty large (the total size of all data files is
-around 111Gb (:O). But around 100Gb of this is just due to the simulations on the 4D lattice with 64^4 spins, so unpack
-that zip file with caution!)
+Inside the directory gifs/ , there is only the python file required to generate gifs. Unfortunately, I couldn't include the
+actual gifs here because they were too big for github... If you run simulations with the programs included here, expect 
+output files on the order of a couple Gb (if you simulate moderately large systems with a sufficiently small logarithmic 
+spacing). When I ran a simulation with logatihmic spacing of 1.1 on a system with L=64 and in 4 dimensions, my output file 
+was roughly 100Gb.
 
 Inside the directory porod_and_LS/ , there are images corroborating the: Lifshitz-Slyozov law, which states that the average 
 size of a magnetic domain grows like t^(1/3) in the conserved order parameter Ising model (c.f. Newman and Barkema, p. 269);
@@ -50,7 +49,7 @@ As for some of the optimizations used in the C++ file, here I will name a couple
     the compiler to aggressively optimize further. This entails loop unrolling, statically allocated arrays etc. Because of 
     this optimization, I was able to simulate systems with roughly 17 million spins in 4 dimensions in roughly the same amount 
     of time as it took to simulate systems with roughly 2 million spins in 3 dimensions! This is because a lot of data 
-    structures that were constantly used had sizes proportional to the dimension of the system. 
+    structures that were constantly used (memory bottlenecks) had sizes proportional to the dimension of the system. 
 
   2)openMP is used to simulate the samples in parallel, which gives a roughly linear increase in speedup (since this task is 
     trivially parallelizable). To facilitate this parallel task, I created structs (System) and instantiated them for each 
