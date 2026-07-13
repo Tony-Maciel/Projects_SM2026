@@ -1,13 +1,14 @@
 In this directory, COPI.cpp simulates the conserved order parameter Ising model in 2 dimensions with 
 periodic boundary conditions. However, it's programmed to be able to handle generalized helical boundary 
 conditions and arbitrary dimensions (as long as the latter is included in the end of main() for optimization
-reasons). The algorithm used is the same one proposed by Marko and Barkema (c.f. COP_IsingModel-PhysRevE.52.2522.pdf).
-This algorithm is also explained in p. 114 of S. Puri and V. Wadhawan (Kinetics_of_phase_transitions.pdf).
+reasons). The algorithm used is the same one proposed by Marko and Barkema in 1995 (c.f. PhysRevE.52.2522).
+This algorithm is also explained in p. 114 of S. Puri and V. Wadhawan (Kinetics of phase transitions).
 It's a continuous time, rejection-free algorithm that is very similar to the Gillespie algorithm, hence
-why it was used. However, it's known that it isn't the *most* efficient algorithm in simulating this model
-for some values of temperatures (like the one I decided to simulate... :|), as pointed out by Newman and Barkema, p.282.
+why it was used (I wanted to learn about the Gillespie algorithm). However, it's known that it isn't the
+*most* efficient algorithm in simulating this model for some values of temperatures (like the one I
+decided to simulate... :|), as pointed out by Newman and Barkema, p.282.
 
-(Bray_theory_of_phase_ordering_kinetics.pdf contains the dynamical scaling hypothesis used in corroborating Porod's law 
+(Bray's theory of phase ordering kinetics, 1995, in arXiv, contains the dynamical scaling hypothesis used in corroborating Porod's law 
 (c.f., eq. 7).)
 
 This directory uses C++ program to do the actual simulations themselves and python files for the data analysis and 
