@@ -23,6 +23,3 @@ of the squared discplacement with respect to time decreases is linear), suggesti
 particles get displaced less and less from the origin. In the limit of dt tending to zero, the particles simply
 don't move from the origin, which corroborates the notion that a naive extrapolation to the continuous limit 
 wouldn't give physical results.
-
-The pdf Higham_numerical_SDE.pdf was used as supplementary material to making these simulations, hence why it's 
-included.
